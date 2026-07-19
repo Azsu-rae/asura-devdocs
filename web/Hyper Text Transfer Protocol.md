@@ -1,12 +1,12 @@
 
 HTTP is one of the most widely used communication protocol on the internet. Some of its most notable characteristics are:
 
-- *Unidirectional connection*: A connection can only be initiated from a client to a server
-- *Stateless protocol*: Each connection is independent and the connection closes once the communication is complete
-- *connection categories*:
-  - Persistent: It is the default connection mode in HTTP/1.0. The connection is interupted at the end of the job
-  - non-persistent: It is the default connection mode in HTTP/1.1. Where `Connection:keep-alive` is added to the header
-- *plain text transmission*: High transmission efficiency. The data is sent in a form that *anyone who intercepts it can read directly*—no protection. Reason for HTTPS.
+- **Unidirectional connection**: A connection can only be initiated from a client to a server
+- **Stateless protocol**: Each connection is independent and the connection closes once the communication is complete
+- **connection categories**:
+	- **Persistent**: It is the default connection mode in HTTP/1.0. The connection is interrupted at the end of the job
+	- **non-persistent**: It is the default connection mode in HTTP/1.1. Where `Connection:keep-alive` is added to the header
+- **plain text transmission**: High transmission efficiency. The data is sent in a form that *anyone who intercepts it can read directly*—no protection. Reason for HTTPS.
 
 = HTTP Message Structure
 

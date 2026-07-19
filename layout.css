@@ -1,0 +1,12 @@
+/* my-theme.css */
+
+/* @theme my-theme */
+
+@import 'default';
+
+section.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
