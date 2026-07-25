@@ -188,7 +188,7 @@ Hello, python world!
 ---
 <!-- _class: subchapter -->
 
-# 2.4. Variables and Simple Data Types
+# 2.4. Data Types
 
 
 You can add (+), subtract (-), multiply (*), and divide (/) **integers** in Python.
@@ -214,7 +214,7 @@ An **integer** is a signed number ((+) عدد صحيح, يحتمل ان يكون
 ---
 <!-- _class: subchapter -->
 
-# 2.4. Variables and Simple Data Types
+# 2.4. Data Types
 
 <div dir="rtl">
 
@@ -242,6 +242,177 @@ An **integer** is a signed number ((+) عدد صحيح, يحتمل ان يكون
 14
 >>> (2 + 3) * 4
 20
+```
+
+---
+<!-- _class: subchapter -->
+
+# 2.4. Data Types
+
+```
+>>> 0.1 + 0.1
+0.2
+>>> 0.2 + 0.2
+0.4
+>>> 2 * 0.1
+0.2
+>>> 2 * 0.2
+0.4
+```
+<div class="definition">
+
+**Definition**
+
+Python calls any number with a decimal point a **float**. This term is used in most programming languages, and it refers to the fact that a decimal point can appear at any position in a number.
+
+</div>
+
+---
+<!-- _class: subchapter -->
+
+# 2.4. Data Types
+
+
+But be aware that you can sometimes get an arbitrary number of decimal places in your answer:
+
+```
+>>> 0.2 + 0.1
+0.30000000000000004
+>>> 3 * 0.1
+0.30000000000000004
+```
+
+When you divide any two numbers, even if they are integers that result in a whole number, you’ll always get a float:
+```
+>>> 4/2
+2.0
+```
+
+---
+<!-- _class: subchapter-->
+
+# 2.4. Data Types
+
+<div class="definition">
+
+**Definition**
+
+A string is a series of characters. Anything inside quotes is considered a string in Python.
+
+</div>
+
+You can use single or double quotes around your strings like this:
+```python
+"This is a string."
+'This is also a string.'
+```
+
+---
+<!-- _class: subchapter-->
+
+# 2.4. Data Types
+
+This flexibility allows you to use quotes and apostrophes within your strings:
+```python
+'I told my friend, "Python is my favorite language!"'
+"The language 'Python' is named after Monty Python, not the snake."
+"One of Python's strengths is its diverse and supportive community."
+```
+
+---
+<!-- _class: subchapter-->
+
+# 2.5. Variables
+
+Let’s expand on this program by modifying hello_world.py to print a second message. Add a blank line to hello_world.py , and then add two new lines of code:
+```python
+message = "Hello Python world!"
+print(message)
+```
+
+outputing once again:
+```
+Hello Python world!
+```
+
+Here, `message` is a variable. You can change the value of a variable in your program at any time, and Python will always keep track of its current value.
+
+---
+<!-- _class: subchapter -->
+
+# 2.5. Variables
+
+## Data Types of variables in Python
+- **int:** Integers (-1, 0, 1, 2, 3, ...)
+- **float:** Decimal values (1.5, 2.1, -7.9, ...)
+- **str:** String of characters! ("Ilyas", "Cheese Burger", "1200 DA/Burger")
+
+You can use underscores in large numbers
+```
+>>> universe_age = 14_000_000_000
+>>> name = "Ilyas"
+>>> grade = 15.6
+```
+
+You assign to multiple variables at once
+```
+>>> x, y, z = 0, 0, 0
+```
+
+---
+<!-- _class: subchapter -->
+
+# 2.5. Variables
+
+- Variable names can contain only letters, numbers, and underscores. They can start with a letter or an underscore, but not with a number. For instance, you can call a variable `message_1` but not `1_message`.
+- Spaces are not allowed in variable names, but underscores can be used to separate words in variable names. For example, `greeting_message` works, but `greeting message` will cause errors.
+- Avoid using Python keywords and function names as variable names; that is, do not use words that Python has reserved for a particular programmatic purpose, such as the word `print`.
+
+---
+<!-- _class: subchapter -->
+
+# 2.6. Function & Variables
+
+now some functions:
+```python
+name = "ada lovelace"
+print(name.title())
+```
+
+outputing:
+```
+Ada Lovelace
+```
+
+```python
+print(name.upper())
+print(name.lower())
+```
+
+This will display the following:
+```
+ADA LOVELACE
+ada lovelace
+```
+
+---
+<!-- _class: subchapter -->
+
+# Comments
+
+```python
+print("Line 1")
+# this is a comment
+print("Line 2")
+```
+
+---
+<!-- _class: subchapter -->
+
+# 2.6. or 2.7 getting user input
+
+```python
+line = input("Tell me something: ") # this gets the whole line
 ```
 
 ---
