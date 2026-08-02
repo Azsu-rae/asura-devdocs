@@ -201,8 +201,9 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "33f2e300806d80d8",
+  "active": "d80a6978f4bc8ad1",
   "lastOpenFiles": [
+    "courses/Intro-to-Python.md",
     "logos/game-dev.png",
     "logos/data-analysis.png",
     "logos/office-work.png",
@@ -213,7 +214,6 @@
     "logos/desktop-app.png",
     "logos/email.png",
     "logos/ai.jpg",
-    "logos/Visual_Studio_Code_1.35_icon.svg.webp",
     "logos",
     "images",
     "logos.dvc",
