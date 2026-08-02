@@ -10,13 +10,9 @@ git log
 Shows:
 
 - Commit hash
-    
 - Author
-    
 - Date
-    
 - Commit message
-    
 
 ### Compact one-line history
 
