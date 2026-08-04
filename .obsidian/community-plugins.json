@@ -1,5 +1,6 @@
 [
   "marp-slides",
   "obsidian-excalidraw-plugin",
-  "jupymd"
+  "jupymd",
+  "obsidian-git"
 ]
