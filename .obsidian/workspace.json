@@ -135,36 +135,7 @@
             }
           },
           {
-            "id": "ef11452053aede4c",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "All properties"
-            }
-          },
-          {
-            "id": "162e2153664bea9d",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "PostgreSQL.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "Outline of PostgreSQL"
-            }
-          },
-          {
-            "id": "16418b15650f13b7",
+            "id": "ae21b56c611e38eb",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -174,11 +145,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 245.5
   },
   "left-ribbon": {
     "hiddenItems": {
