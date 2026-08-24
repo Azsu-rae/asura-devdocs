@@ -11,10 +11,14 @@
             "id": "223b624770019c2d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Git.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Git"
             }
           }
         ]
@@ -143,6 +147,34 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "894ef6977cf22722",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "8c9bb169cc584458",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
           }
         ],
         "currentTab": 3
@@ -167,11 +199,13 @@
   },
   "active": "223b624770019c2d",
   "lastOpenFiles": [
+    "Git.md",
+    "PostgreSQL.md",
+    "Linux.md",
     "courses/formation_python/Intro-to-Python.md",
     "Python.md",
     "DVC.md",
     "JavaScript.md",
-    "Linux.md",
     "courses/formation_python/logos/Visual_Studio_Code_1.35_icon.svg.webp",
     "courses/formation_python/logos/Visual_Studio_Code_1.35_icon.svg.webp_h55xogh.part",
     "courses/formation_python/logos/scientific-computing.png",
@@ -192,7 +226,6 @@
     "courses/formation_python/logos/email.avifffbhzh6m.part",
     "courses/formation_python/logos/desktop-app.png",
     "courses/formation_python/logos/desktop-app.pngdo5tw97p.part",
-    "Git.md",
     "courses/Intro-to-Python.md",
     "courses/Intro-to-Python_V1.md",
     "courses/Intro-to-python.md",
@@ -204,7 +237,6 @@
     "Intro to Python.md",
     "Excalidraw/Drawing 2026-07-18 17.44.50.excalidraw.md",
     "Case.md",
-    "PostgreSQL.md",
     "URLs and Slashes.md",
     "notes/UUID.md",
     "notes/ressources.md",
