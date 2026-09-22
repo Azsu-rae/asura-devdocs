@@ -10,6 +10,12 @@ Changing the linux user:
 sudo -i -u postgres
 ```
 
+# URL
+
+```
+postgresql://user:password@localhost:5432/dbname
+```
+
 check the current database:
 
 ```postgresql
@@ -33,6 +39,14 @@ or
 ```postgresql
 \dg
 ```
+
+
+connect to a database
+```sh
+\c dbname
+```
+
+the `\c` is for connect.
 
 ## Users and Databases
 
@@ -136,3 +150,8 @@ listing tables:
 ```postgresql
 \dt
 ```
+
+```sh
+\d table_name
+```
+to check the table schema
