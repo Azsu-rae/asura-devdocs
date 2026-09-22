@@ -1,7 +1,7 @@
 
-You can view Git commit history using several commands depending on how much detail you want.
+# Commit History
 
-### View all commits
+View all commits
 
 ```bash
 git log
@@ -10,15 +10,11 @@ git log
 Shows:
 
 - Commit hash
-    
 - Author
-    
 - Date
-    
 - Commit message
-    
 
-### Compact one-line history
+Compact one-line history
 
 ```bash
 git log --oneline
@@ -32,7 +28,7 @@ f3a9b2d Fix login bug
 4b5c6d7 Initial commit
 ```
 
-### Show commit history as a graph
+Show commit history as a graph
 
 ```bash
 git log --oneline --graph --decorate --all
@@ -40,7 +36,7 @@ git log --oneline --graph --decorate --all
 
 This displays branches and merges in a tree-like format.
 
-### Show the last _n_ commits
+Show the last _n_ commits
 
 ```bash
 git log -n 5
@@ -48,13 +44,13 @@ git log -n 5
 
 Shows only the last 5 commits.
 
-### View commits affecting a specific file
+View commits affecting a specific file
 
 ```bash
 git log path/to/file
 ```
 
-### Show detailed changes in each commit
+Show detailed changes in each commit
 
 ```bash
 git log -p
@@ -74,26 +70,19 @@ Example:
 git show f3a9b2d
 ```
 
-### Quick reference
+## Quick reference
 
-|Command|Description|
-|---|---|
-|`git log`|Full commit history|
-|`git log --oneline`|One-line summary of commits|
-|`git log --graph --oneline --all`|Graphical branch history|
-|`git log -n 10`|Last 10 commits|
-|`git log --author="Alice"`|Commits by a specific author|
-|`git log --since="2 weeks ago"`|Recent commits|
-|`git show <commit-hash>`|Details of a specific commit|
+| Command                           | Description                  |
+| --------------------------------- | ---------------------------- |
+| `git log`                         | Full commit history          |
+| `git log --oneline`               | One-line summary of commits  |
+| `git log --graph --oneline --all` | Graphical branch history     |
+| `git log -n 10`                   | Last 10 commits              |
+| `git log --author="Alice"`        | Commits by a specific author |
+| `git log --since="2 weeks ago"`   | Recent commits               |
+| `git show <commit-hash>`          | Details of a specific commit |
 
-For day-to-day work, the most commonly used command is:
-
-```bash
-git log --oneline --graph --decorate
-```
-
-It provides a concise and easy-to-read view of your repository's history.
-
+# Undoing The Last Commit
 
 There are several ways to undo the last commit, depending on what you want to happen to the changes.
 
@@ -107,10 +96,8 @@ git reset --soft HEAD~1
 
 Result:
 
-- ✅ Last commit is removed.
-    
-- ✅ Changes remain staged (`git add` is not needed again).
-    
+- Last commit is removed.
+- Changes remain staged (`git add` is not needed again).
 
 ---
 
@@ -131,13 +118,8 @@ git reset --mixed HEAD~1
 Result:
 
 - ✅ Last commit is removed.
-    
 - ✅ Changes remain in your files.
-    
 - ❌ Changes are no longer staged.
-    
-
----
 
 ### Discard the commit and all its changes
 
@@ -170,12 +152,255 @@ git push --force-with-lease
 
 `--force-with-lease` is safer than `--force` because it checks that you won't overwrite someone else's recent work.
 
----
+# Using Different Development Branches
 
-**Which situation are you in?**
+The important thing is that **your working tree is independent of the branch pointer**, but you need to deal with the uncommitted changes before switching branches.
 
-- The commit is **only local**.
-    
-- The commit has been **pushed to GitHub/GitLab**.
-    
-- You want to **keep the changes** or **delete them completely**.
+the cleanest approach is to **stash your current work temporarily**.
+
+```bash
+# 1. Save your current unstaged work
+git stash push -m "my current work"
+
+# 2. Switch to the branch where you want the patch
+git switch <other-branch>
+
+# 3. Apply the patch
+git apply changes.patch
+
+# 4. Your patch is now applied on that branch
+git status
+```
+
+Your original `MainApp.java` changes are safely in the stash.
+
+When you're done working on the patch branch, you can return to `master`:
+
+```bash
+git switch master
+```
+
+and restore your original work:
+
+```bash
+git stash pop
+```
+
+### If the other branch doesn't exist yet
+
+You can create it directly:
+
+```bash
+git stash push -m "my current work"
+git switch -c patch-work
+git apply changes.patch
+```
+
+Then your situation is essentially:
+
+```text
+master
+  │
+  └── current commit
+       │
+       └── patch-work
+            └── changes from changes.patch
+```
+
+while your original unstaged changes are temporarily stored in the stash.
+
+**A branch is essentially a movable pointer/reference to a commit.**
+
+For example:
+
+```text
+A---B---C
+        ^
+      master
+```
+
+Here `master` points to commit `C`.
+
+If you create another branch:
+
+```bash
+git branch feature
+```
+
+you get:
+
+```text
+A---B---C
+        ^ ^
+   master feature
+```
+
+Both branches initially point to the same commit.
+
+Then you make a commit while on `feature`:
+
+```text
+A---B---C---D
+        ^   ^
+      master feature
+```
+
+The important part is that **the commits aren't "inside" the branch**. The branch is just a name pointing at the latest commit.
+
+Suppose:
+
+```text
+A---B---C    master
+     \
+      D---E  feature
+```
+
+Your working tree is separate from those branch pointers. You can have:
+
+```text
+feature -> E
+
+working tree:
+    modified files not committed
+```
+
+Then you can switch branches (provided Git can do so safely), and the **branch pointer moves your `HEAD` to a different commit**, while uncommitted changes can remain in your working tree.
+
+And when you do:
+
+```bash
+git apply patch.diff
+```
+
+Git isn't modifying a branch pointer at all. It's essentially saying:
+
+> "Take these changes and modify my working tree according to them."
+
+Only `git commit` creates a new commit and moves the current branch pointer forward.
+
+## What HEAD is
+
+`HEAD` is Git's name for **the commit you're currently "at"**.
+
+More precisely, `HEAD` is a reference that normally points to your **current branch**, which then points to a commit.
+
+For example:
+
+```text
+A---B---C
+        ^
+      master
+        ^
+       HEAD
+```
+
+Here:
+
+- `master` → points to `C`
+- `HEAD` → points to `master`
+- therefore, `HEAD` ultimately refers to commit `C`
+
+If you switch to another branch:
+
+```bash
+git switch feature
+```
+
+you get:
+
+```text
+A---B---C        master
+     \
+      D---E      feature
+          ^
+         HEAD
+```
+
+So `HEAD` moved from `master` to `feature`.
+
+### Why does Git need `HEAD`?
+
+Because commands like:
+
+```bash
+git commit
+git diff HEAD
+git reset HEAD~1
+```
+
+need to know **where you're currently working relative to the repository's history**.
+
+There's also a special case called **detached HEAD**:
+
+```text
+A---B---C---D
+        ^
+       HEAD
+```
+
+Here `HEAD` points directly to commit `B`, rather than to a branch. This happens when you do:
+
+```bash
+git checkout <commit>
+```
+
+or:
+
+```bash
+git switch --detach <commit>
+```
+
+The simplest mental model is:
+
+> **Branch = a movable pointer to a commit.**  
+> **HEAD = what you're currently checked out; normally it points to your current branch.**
+# Patch Files
+
+A **Git patch file** is a text file that describes **changes made to files**, rather than containing the entire project.
+
+You can use a patch to **transfer changes** from one copy of a project to another without sending the entire project.
+
+```bash
+git diff > changes.patch
+```
+
+creates a patch containing your uncommitted changes.
+
+Someone else can then apply it with:
+
+```bash
+git apply changes.patch
+```
+
+and their working tree will receive those changes.
+
+You can also generate a patch from a commit:
+
+```bash
+git format-patch HEAD~1
+```
+
+That produces a patch representing the most recent commit.
+
+**`git apply` does not create a commit.**
+
+For example:
+
+```bash
+git apply changes.patch
+```
+
+Afterward:
+
+```bash
+git status
+```
+
+will show the patched files as modified, but there will be **no new commit**.
+
+You then commit them normally:
+
+```bash
+git add .
+git commit -m "Apply changes from patch"
+```

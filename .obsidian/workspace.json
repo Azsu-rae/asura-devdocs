@@ -13,29 +13,44 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PostgreSQL.md",
+                "file": "Linux.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PostgreSQL"
+              "title": "Linux"
             }
           },
           {
-            "id": "3d34e61842c2d6c0",
+            "id": "35ec81071b7b9027",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Git.md",
+                "file": "Linux.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Git"
+              "title": "Linux"
+            }
+          },
+          {
+            "id": "ec2adeb9edbc954f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "URLs and Slashes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "URLs and Slashes"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -55,7 +70,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -108,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PostgreSQL.md",
+                "file": "URLs and Slashes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +135,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for PostgreSQL"
+              "title": "Backlinks"
             }
           },
           {
@@ -178,13 +195,23 @@
               "icon": "lucide-list",
               "title": "Outline of PostgreSQL"
             }
+          },
+          {
+            "id": "0469a7c47c2e9ad0",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,13 +223,28 @@
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "marp-slides:Show Slide Preview": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7892d9ebda64711e",
+  "active": "ec2adeb9edbc954f",
   "lastOpenFiles": [
+    "Linux.md",
+    "Untitled.md",
     "Git.md",
     "PostgreSQL.md",
+    "SQLite.md",
+    "URLs and Slashes.md",
+    "Case.md",
+    "Intro-to-python 1.md",
+    "formation-python/Intro-to-Python.pdf",
+    "formation-python/Intro-to-Python_V1.pdf",
+    "formation-python/Intro-to-Python_V1.md",
+    "formation-python/Intro-to-Python_V1 1.pdf",
+    "formation-python/Intro-to-Python_V1 1.md",
+    "Intro-to-Python 1.pdf",
+    "formation-python/Intro-to-python.md",
+    "formation-python",
     "Intro-to-Python_V1.md~",
     "images/tooling.png",
     "images/software-dev.png",
@@ -215,23 +257,13 @@
     "images/email.png",
     "images/email.avif",
     "images",
-    "Intro-to-Python_V1.md",
     "Excalidraw/Drawing 2026-07-18 17.45.24.excalidraw.md",
-    "Untitled.md",
     "TP1.ipynb",
     "run.sh~",
     "Intro-to-Python.md~",
-    "Intro-to-Python.html",
-    "layout.css~",
-    "layout.css",
-    "run.sh",
-    "Intro-to-Python.pdf",
     "Intro-to-Python.md",
     "Intro to Python.md",
     "Excalidraw/Drawing 2026-07-18 17.44.50.excalidraw.md",
-    "Case.md",
-    "URLs and Slashes.md",
-    "Linux.md",
     "notes/UUID.md",
     "notes/ressources.md",
     "notes/docs.md",
@@ -241,8 +273,6 @@
     "web/Hyper Text Transfer Protocol.md",
     "web/Apache.md",
     "notes/Repport.md",
-    "notes/ORM.md",
-    "notes/flutter_integration_prompt.md",
-    "notes/flutter_prompt.md"
+    "notes/ORM.md"
   ]
 }
