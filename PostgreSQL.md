@@ -143,7 +143,7 @@ chmod 600 ~/.pgpass
 
 Otherwise PostgreSQL ignores the file for security reasons.
 
-# User Commands
+# User in DB Commands
 
 listing tables:
 
@@ -154,4 +154,22 @@ listing tables:
 ```sh
 \d table_name
 ```
+
 to check the table schema
+
+# CMD Line Utilties
+
+PostgreSQL comes with quite a few command line utilities:
+
+```sh
+dropdb -U postgres --if-exists scratch
+createdb -U postgres scratch
+psql -U postgres -d scratch -f schema.sql
+```
+
+You can execute a file using:
+
+```sh
+psql -U postgres -d scratch -f schema.sql
+```
+
