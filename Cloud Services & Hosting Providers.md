@@ -1,4 +1,11 @@
 
+# Hosting
+
+- Digital Ocean
+- Cloudflare
+- https://www.netlify.com/
+- https://www.linode.com/fr/
+
 # Providers
 
 German: https://www.hetzner.com/
