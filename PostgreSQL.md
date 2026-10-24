@@ -12,7 +12,7 @@ sudo -i -u postgres
 
 # URL
 
-```
+```sh
 postgresql://user:password@localhost:5432/dbname
 ```
 
