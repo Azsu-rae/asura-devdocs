@@ -54,3 +54,9 @@ sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.
 ```
 
 You don't necessarily need to disable GNOME's power-management settings separately; the system-level systemd block is the stronger enforcement.
+
+To add a symlink
+
+```sh
+ln -sfn "$HOME/.dotfiles/.config/nvim" "$HOME/.config/"
+```
